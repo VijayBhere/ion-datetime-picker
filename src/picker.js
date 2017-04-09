@@ -293,6 +293,11 @@ angular.module("ion-datetime-picker", ["ionic"])
           changeViewData();
         };
 
+        $scope.focused = function(focusEvent){
+          if(focusEvent && focusEvent.target)
+            focusEvent.target.select();
+        }
+
         if ($scope.dateEnabled) {
           $scope.$watch(function() {
             return new Date().getDate();
